@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Digital resume and student project portfolio of Mark Daniel M. Medina.">
+  <title>Mark Daniel M. Medina | Digital Resume</title>
+  <style>
+    :root {
+      --navy: #10243a;
+      --blue: #1d5f91;
+      --sky: #e8f2fa;
+      --ink: #263445;
+      --muted: #687789;
+      --paper: #ffffff;
+      --line: #dce5ed;
+      --bg: #f3f6fa;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .topbar {
+      background: rgba(16,36,58,.97);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 18px rgba(12,31,50,.12);
+    }
+    .nav {
+      max-width: 1080px;
+      margin: auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand { font-weight: 800; letter-spacing: .04em; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 18px; }
+    .navlinks a { font-size: .92rem; text-decoration: none; color: #e7eff7; }
+    .navlinks a:hover { color: #8fd1ff; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 30px auto 55px; }
+    .hero {
+      background: linear-gradient(120deg, #10243a, #1d5f91);
+      color: white;
+      border-radius: 24px;
+      padding: clamp(26px, 5vw, 58px);
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      align-items: center;
+      gap: 35px;
+      box-shadow: 0 16px 40px rgba(16,36,58,.15);
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; font-weight: 800; color: #a9ddff; }
+    h1 { font-size: clamp(2.1rem, 5vw, 3.7rem); line-height: 1.08; margin: 12px 0; letter-spacing: -.04em; }
+    .hero p { max-width: 640px; color: #e0edf8; margin: 0 0 22px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn { display: inline-block; border-radius: 999px; padding: 10px 17px; font-weight: 700; text-decoration: none; font-size: .92rem; }
+    .btn-light { background: white; color: var(--navy); }
+    .btn-outline { border: 1px solid #c5e4f8; color: white; }
+    .profile-frame { width: 205px; height: 245px; border: 5px solid rgba(255,255,255,.28); border-radius: 20px; overflow: hidden; justify-self: end; background: #dbe7f1; }
+    .profile-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+    .section { margin-top: 28px; }
+    .section-title { margin: 0 0 15px; color: var(--navy); font-size: 1.55rem; letter-spacing: -.02em; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 24px; box-shadow: 0 5px 18px rgba(20,45,70,.035); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+    .card h3 { margin: 0 0 7px; color: var(--navy); }
+    .muted { color: var(--muted); }
+    .taglist { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tag { border-radius: 999px; background: var(--sky); color: #194e75; padding: 5px 10px; font-size: .83rem; font-weight: 700; }
+    .project { overflow: hidden; padding: 0; }
+    .project img { display: block; width: 100%; height: 220px; object-fit: cover; object-position: center; background: #e4eaf0; }
+    .project-copy { padding: 20px; }
+    ul { padding-left: 20px; margin-bottom: 0; }
+    li { margin: 7px 0; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .contact-item { background: #f1f6fa; border-radius: 12px; padding: 12px 15px; }
+    footer { text-align: center; color: var(--muted); padding: 28px 10px 0; font-size: .9rem; }
+    .notice { font-size: .88rem; background: #fff8e8; border: 1px solid #f2dfb5; padding: 12px 15px; border-radius: 12px; color: #6e5119; }
+    @media (max-width: 720px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { gap: 12px; }
+      .hero { grid-template-columns: 1fr; }
+      .profile-frame { justify-self: start; grid-row: 1; width: 150px; height: 175px; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .wrap { margin-top: 18px; }
+      .project img { height: 190px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">MDM. / RESUME</div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Civil Engineering Student</div>
+        <h1>Mark Daniel<br>M. Medina</h1>
+        <p>A motivated Civil Engineering student interested in building design, technical drafting, and plumbing systems. I aim to strengthen my technical knowledge through hands-on projects, collaboration, and continuous learning.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-light" href="#projects">View My Projects</a>
+          <a class="btn btn-outline" href="#contact">Contact Details</a>
+        </div>
+      </div>
+      <div class="profile-frame">
+        <img src="images/profile.jpg" alt="Profile photo of Mark Daniel M. Medina">
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p>I am a Civil Engineering student developing my skills in technical drawing, residential building systems, research, and problem-solving. I value teamwork, responsibility, and learning from feedback. My goal is to apply classroom knowledge to practical engineering work and continue improving as a future professional.</p>
+        <div class="taglist">
+          <span class="tag">Civil Engineering</span><span class="tag">Technical Drafting</span>
+          <span class="tag">Plumbing Systems</span><span class="tag">Teamwork</span><span class="tag">Research</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <h3>Bachelor of Science in Civil Engineering (BSCE)</h3>
+        <p class="muted">College student · School and expected graduation year to be added</p>
+        <p>Relevant areas of learning include engineering mechanics, construction materials, technical drawing, building systems, and residential plumbing design.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects & Experience</h2>
+      <div class="grid-2">
+        <article class="card project">
+          <img src="images/revit-plumbing.jpg" alt="Residential building water supply system drawing created for a plumbing project">
+          <div class="project-copy">
+            <h3>Residential Plumbing & Water Supply System</h3>
+            <p class="muted">Revit / CAD-based academic project</p>
+            <p>Contributed to a two-storey residential building project focused on the water supply system, including plumbing layouts, elevations, fixture locations, and drawing presentation.</p>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Group Research Presentation</h3>
+          <p class="muted">Senior high school academic experience</p>
+          <p>Participated in a group research presentation and worked with teammates to prepare and present academic work.</p>
+          <ul>
+            <li>Collaborative project work</li>
+            <li>Research and presentation experience</li>
+            <li>Certificate/photo documentation available</li>
+          </ul>
+          <p class="muted">Research title and exact recognition can be added when confirmed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="strengths" class="section">
+      <h2 class="section-title">Strengths & Areas to Improve</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Strengths</h3>
+          <ul>
+            <li><strong>Willingness to learn:</strong> open to new tools, ideas, and constructive feedback.</li>
+            <li><strong>Teamwork:</strong> able to contribute to group projects and shared goals.</li>
+            <li><strong>Persistence:</strong> willing to keep practicing when a topic or task is challenging.</li>
+            <li><strong>Technical interest:</strong> interested in drafting, building systems, and engineering design.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Weaknesses / Areas to Improve</h3>
+          <ul>
+            <li><strong>Building confidence:</strong> practicing how to communicate ideas clearly during presentations.</li>
+            <li><strong>Time management:</strong> improving task planning by breaking large requirements into smaller steps.</li>
+            <li><strong>Technical experience:</strong> continuing to gain proficiency with engineering software through regular practice.</li>
+          </ul>
+          <p class="muted">These are suggested professional examples—edit them so they honestly reflect you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="card">
+        <div class="taglist">
+          <span class="tag">Revit — academic project</span>
+          <span class="tag">AutoCAD — developing</span>
+          <span class="tag">Technical Drawing</span>
+          <span class="tag">Research & Presentation</span>
+          <span class="tag">Team Collaboration</span>
+          <span class="tag">Problem-Solving</span>
+        </div>
+        <p class="muted">Keep only the software and skills you can comfortably discuss or demonstrate.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>For academic, project, or collaboration inquiries, you can add your preferred contact details below.</p>
+        <div class="contact-row">
+          <div class="contact-item"><strong>Email:</strong> Add your email</div>
+          <div class="contact-item"><strong>Location:</strong> Aklan, Philippines</div>
+          <div class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/w34558405-cyber/Mark-Daniel" target="_blank" rel="noopener">View repository</a></div>
+        </div>
+        <p class="notice">Before publishing, replace the email placeholder and verify the education details, project contribution, and listed skills.</p>
+      </div>
+    </section>
+    <footer>© <span id="year"></span> Mark Daniel M. Medina · Digital Resume</footer>
+  </main>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
